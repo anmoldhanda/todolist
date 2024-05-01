@@ -1,0 +1,115 @@
+/* ================================================= google fonts ================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap");
+
+:root {
+  --green-color: #8ac926;
+  --red-color: #ff6685;
+  --white-color: #ffffff;
+  --box-shadow: 0 0 2rem 1rem #c7cbf2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass Mono", monospace;
+}
+
+.todolist-container {
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.todolist-header {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.todolist-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#todolist-inputfield {
+  width: 20vw;
+  background: transparent;
+  outline: none;
+  padding: 5px 8px;
+}
+
+.createtodoicon {
+  background: var(--green-color);
+  color: var(--white-color);
+  border: 1px solid transparent;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.createtodoicon:hover {
+  background: transparent;
+  color: var(--green-color);
+  border: 1px solid var(--green-color);
+}
+
+.todolistitems-ul {
+  width: 100%;
+}
+
+.each-todolist-itembox {
+  list-style-type: none;
+  text-transform: capitalize;
+  margin: 5px 0;
+  border-bottom: 1px solid #677483;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconsdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconsdiv i {
+  border: 1px solid transparent;
+  padding: 7px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#edit-todoitem {
+  background: var(--green-color);
+  color: var(--white-color);
+}
+
+#edit-todoitem:hover {
+  background: transparent;
+  color: var(--green-color);
+  border: 1px solid var(--green-color);
+}
+
+#delete-todoitem {
+  background: var(--red-color);
+  color: var(--white-color);
+}
+
+#delete-todoitem:hover {
+  background: transparent;
+  color: var(--red-color);
+  border: 1px solid var(--red-color);
+}
