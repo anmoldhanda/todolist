@@ -143,14 +143,14 @@ body {
 
 #edit-todoitem {
   background: transparent;
-  color: var(--green-color);
-  border: 1px solid var(--green-color);
+  color: #1a8edd;
+  /* border: 1px solid var(--green-color); */
 }
 
 #delete-todoitem {
   background: transparent;
-  color: var(--red-color);
-  border: 1px solid var(--red-color);
+  color: #1a8edd;
+  /* border: 1px solid var(--red-color); */
 }
 
 #edit-todoitem:hover,

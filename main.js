@@ -22,10 +22,7 @@ function create_todo() {
     todolist_itemtext.innerText = todolist_inputfield.value;
     todolist_itemsul.appendChild(li_tag);
     todolist_inputfield.value = "";
-    setTimeout(() => {
-      todolist_notification.innerHTML = "task added successfully";
-    }, 1000);
-    todolist_notification.innerHTML = "";
+    show_todolist_notification("new task added successfully");
   } else {
     alert("enter the value to the form first");
     todolist_inputfield.focus();
@@ -66,18 +63,24 @@ function update_todo(e) {
         updated_todotext.innerText = todolist_inputfield.value;
         create_todo_btn.setAttribute("onclick","create_todo()");
         todolist_inputfield.value = "";
-      setTimeout(() => {
-        todolist_notification.innerHTML = "task updated successfully";
-      }, 1000);
-      todolist_notification.innerHTML = "";
-    updated_todotext = null;
-    editing_mode_todotext = false;
+      updated_todotext = null;
+      editing_mode_todotext = false;
+      show_todolist_notification("task updated successfully");
   }
 }
 
 // ============================================ delete todo ============================================
 function delete_todo(e) {
-    if(confirm(`are you sure that you want to delete the ${e.parentElement.previousElementSibling.innerText}`)) {
-        e.parentElement.parentElement.remove();
-    }
+  if(confirm(`are you sure that you want to delete the ${e.parentElement.previousElementSibling.innerText}`)) {
+    e.parentElement.parentElement.remove();
+  }
+}
+
+// ========================== notification indicating new task added or existing task updated ==========================
+function show_todolist_notification(notification_message) {
+  todolist_notification.innerText = notification_message;
+  todolist_notification.style.display = "block";
+  setTimeout(() => {
+    todolist_notification.style.display = "none";
+  }, 2000);
 }
