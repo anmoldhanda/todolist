@@ -5,7 +5,7 @@
   --green-color: #8ac926;
   --red-color: #ff6685;
   --white-color: #ffffff;
-  --box-shadow: 0 0 2rem #c7cbf2;
+  --grey-color: #2f3336;
 }
 
 * {
@@ -15,10 +15,15 @@
   font-family: "Overpass Mono", monospace;
 }
 
+body {
+  background: #000000;
+}
+
 .todolist-container {
   padding: 10px;
   border-radius: 10px;
   position: absolute;
+  width: 90vmin;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -27,38 +32,37 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  box-shadow: var(--box-shadow);
+  border: 1px solid var(--grey-color);
 }
 
 .todolist-header {
   text-align: center;
-  text-transform: capitalize;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: var(--white-color);
 }
 
 .headline {
   display: inline-block;
-  color: cornflowerblue;
 }
 
-.todolist-gif {
-  width: 63px;
+.todolist-header > i {
+  font-size: 20px;
 }
 
 .todolist-body {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
 
 #todolist-inputfield {
-  width: 20vw;
+  width: 70vmin;
   background: transparent;
   outline: none;
   padding: 5px 8px;
+  border: none;
+  color: white;
 }
 
 .createtodoicon {
@@ -77,28 +81,40 @@
 }
 
 .createtodobtn {
-  background: cornflowerblue;
+  background: transparent;
   color: var(--white-color);
   padding: 5px 8px;
   text-transform: capitalize;
-  border: 1px solid transparent;
+  border: 1px solid var(--grey-color);
   border-radius: 5px;
   cursor: pointer;
+}
+
+.createtodobtn:hover {
+  background: #171717;
+}
+
+#todolist-notification {
+  color: #1a8edd;
+  text-transform: capitalize;
+  font-size: 12px;
 }
 
 .todolistitems-ul {
   width: 100%;
 }
 
+/* ================================================= each todolist itembox li ================================================= */
 .each-todolist-itembox {
   list-style-type: none;
   text-transform: capitalize;
   padding: 5px 0;
-  border-bottom: 1px solid #677483;
+  border-bottom: 1px solid var(--grey-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  color: var(--white-color);
 }
 
 .todolist-itemtext {
@@ -126,23 +142,18 @@
 }
 
 #edit-todoitem {
-  background: var(--green-color);
-  color: var(--white-color);
-}
-
-#edit-todoitem:hover {
   background: transparent;
   color: var(--green-color);
   border: 1px solid var(--green-color);
 }
 
 #delete-todoitem {
-  background: var(--red-color);
-  color: var(--white-color);
-}
-
-#delete-todoitem:hover {
   background: transparent;
   color: var(--red-color);
   border: 1px solid var(--red-color);
+}
+
+#edit-todoitem:hover,
+#delete-todoitem:hover {
+  background: rgb(231, 233, 234, 0.1);
 }

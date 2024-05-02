@@ -1,6 +1,7 @@
 const todolist_inputfield = document.getElementById("todolist-inputfield");
 const create_todo_btn = document.querySelector(".createtodobtn");
 const todolist_itemsul = document.querySelector(".todolistitems-ul");
+const todolist_notification = document.getElementById("todolist-notification");
 // ============================================ the updated_todotext is set to null which means it doesn't even exist ============================================
 let updated_todotext = null;
 // ============================================ editing mode is initially set as false which means the user's isn't editing it's existing todo item ============================================
@@ -21,6 +22,10 @@ function create_todo() {
     todolist_itemtext.innerText = todolist_inputfield.value;
     todolist_itemsul.appendChild(li_tag);
     todolist_inputfield.value = "";
+    setTimeout(() => {
+      todolist_notification.innerHTML = "task added successfully";
+    }, 1000);
+    todolist_notification.innerHTML = "";
   } else {
     alert("enter the value to the form first");
     todolist_inputfield.focus();
@@ -52,15 +57,19 @@ function update_todo(e) {
         updated_todotext = todolist_itemtext; /* ============================================ make sure the updated_todotext now exists by referencing it's existence from todolist_itemtext which is our ptag holding the todo task so now the updated_todotex exists in our enviroment ============================================ */
         create_todo_btn.setAttribute("onclick","updatetodo_itemtext()");
         editing_mode_todotext = true;
+      }
     }
-}
-
-function updatetodo_itemtext() {
-  // ============================================ check if the updated_todotext exists in our enviroment then edit the particular todo task by updating it & then reset the inputfield's value & again make sure the updated_todotext isn't existing in our enviroment ============================================
-  if(updated_todotext !== null && editing_mode_todotext === true) {
-    updated_todotext.innerText = todolist_inputfield.value;
-    create_todo_btn.setAttribute("onclick","create_todo()");
-    todolist_inputfield.value = "";
+    
+    async function updatetodo_itemtext() {
+      // ============================================ check if the updated_todotext exists in our enviroment then edit the particular todo task by updating it & then reset the inputfield's value & again make sure the updated_todotext isn't existing in our enviroment ============================================
+      if(updated_todotext !== null && editing_mode_todotext === true) {
+        updated_todotext.innerText = todolist_inputfield.value;
+        create_todo_btn.setAttribute("onclick","create_todo()");
+        todolist_inputfield.value = "";
+      setTimeout(() => {
+        todolist_notification.innerHTML = "task updated successfully";
+      }, 1000);
+      todolist_notification.innerHTML = "";
     updated_todotext = null;
     editing_mode_todotext = false;
   }
