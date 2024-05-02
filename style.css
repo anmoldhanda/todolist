@@ -5,7 +5,7 @@
   --green-color: #8ac926;
   --red-color: #ff6685;
   --white-color: #ffffff;
-  --box-shadow: 0 0 2rem 1rem #c7cbf2;
+  --box-shadow: 0 0 2rem #c7cbf2;
 }
 
 * {
@@ -16,7 +16,6 @@
 }
 
 .todolist-container {
-  box-shadow: var(--box-shadow);
   padding: 10px;
   border-radius: 10px;
   position: absolute;
@@ -28,11 +27,24 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  box-shadow: var(--box-shadow);
 }
 
 .todolist-header {
   text-align: center;
   text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headline {
+  display: inline-block;
+  color: cornflowerblue;
+}
+
+.todolist-gif {
+  width: 63px;
 }
 
 .todolist-body {
@@ -91,6 +103,7 @@
 
 .todolist-itemtext {
   user-select: none;
+  font-size: 13px;
 }
 
 .todolist-itemtext.task-completed {
