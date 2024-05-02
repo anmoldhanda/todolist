@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ============================================ custom css ============================================ -->
     <link rel="stylesheet" href="style.css" />
-    <title>todolist</title>
+    <title>Todo app</title>
   </head>
   <body>
     <div class="todolist-container">
@@ -17,10 +17,28 @@
         <div class="todolist-body">
             <input type="text" name="todolist_input" id="todolist-inputfield" placeholder="Add your tasks here">
             <button class="createtodobtn" title="Add todo" onclick="create_todo()">add <i class="fa-solid fa-plus"></i></button>
-            <!-- <i class="fa-solid fa-plus createtodoicon"></i> -->
         </div>
         <p id="todolist-notification"></p>
         <ul class="todolistitems-ul"></ul>
+    </div>
+    <!-- ======================== overlay notification for todo item deletion confirmation box ======================== -->
+    <div class="overlay-notification-container" id="todoitem-deletion-confirmationbox">
+      <div class="overlay-notification-box">
+        <p class="overlay-notification-indicatortext"></p>
+        <div class="confirmationbtns-container">
+          <button class="createtodobtn" id="cancel-deletionbtn">cancel</button>
+          <button class="createtodobtn" id="yes-deletionbtn">ok</button>
+        </div>
+      </div>
+    </div>
+    <!-- ======================== overlay notification for entering empty input field alert box ======================== -->
+    <div class="overlay-notification-container" id="emptyinput-alertbox">
+      <div class="overlay-notification-box">
+        <p class="overlay-notification-indicatortext"></p>
+        <div class="confirmationbtns-container">
+          <button class="createtodobtn" id="closebtn-emptyinput-alertbox">ok</button>
+        </div>
+      </div>
     </div>
     <!-- ============================================ custom js ============================================ -->
     <script src="main.js"></script>
