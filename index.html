@@ -15,17 +15,11 @@
             <h3 class="headline">todo list</h3>
         </div>
         <div class="todolist-body">
-            <input type="text" name="todolist_input" id="todolist-inputfield" placeholder="Add your tasks here"><i class="fa-solid fa-plus createtodoicon"></i>
+            <input type="text" name="todolist_input" id="todolist-inputfield" placeholder="Add your tasks here">
+            <button class="createtodobtn" title="Add todo" onclick="create_todo()">add <i class="fa-solid fa-plus"></i></button>
+            <!-- <i class="fa-solid fa-plus createtodoicon"></i> -->
         </div>
-        <ul class="todolistitems-ul">
-            <li class="each-todolist-itembox">
-                <p class="todolist-item">jfa</p>
-                <div class="iconsdiv">
-                    <i class="fa-solid fa-pencil" id="edit-todoitem"></i>
-                    <i class="fa-solid fa-trash" id="delete-todoitem"></i>
-                </div>
-            </li>
-        </ul>
+        <ul class="todolistitems-ul"></ul>
     </div>
     <!-- ============================================ custom js ============================================ -->
     <script src="main.js"></script>

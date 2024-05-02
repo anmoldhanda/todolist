@@ -64,6 +64,16 @@
   border: 1px solid var(--green-color);
 }
 
+.createtodobtn {
+  background: cornflowerblue;
+  color: var(--white-color);
+  padding: 5px 8px;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .todolistitems-ul {
   width: 100%;
 }
@@ -71,24 +81,34 @@
 .each-todolist-itembox {
   list-style-type: none;
   text-transform: capitalize;
-  margin: 5px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #677483;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+}
+
+.todolist-itemtext {
+  user-select: none;
+}
+
+.todolist-itemtext.task-completed {
+  text-decoration: line-through;
 }
 
 .iconsdiv {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
 }
 
 .iconsdiv i {
   border: 1px solid transparent;
-  padding: 7px;
+  padding: 5px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 11px;
   cursor: pointer;
 }
 
